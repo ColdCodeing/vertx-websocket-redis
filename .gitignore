@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+target
+.vertx
+websocket-2017-12-01.log
+out
+gen

@@ -1,0 +1,28 @@
+<configuration scan="true" scanPeriod="90 seconds">
+
+  <!--输出到控制台-->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!--变量替换,项目名字-->
+  <property name="PROJECT" value="websocket" />
+
+  <!--输出到日志文件 maxHistory = -1不作限制-->
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${PROJECT}-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>-1</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="debug">
+    <appender-ref ref="FILE"/>
+  </root>
+
+</configuration>
